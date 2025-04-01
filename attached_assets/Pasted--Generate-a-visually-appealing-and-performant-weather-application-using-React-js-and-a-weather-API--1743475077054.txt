@@ -1,0 +1,46 @@
+# Generate a visually appealing and performant weather application using React.js and a weather API.
+
+## Project Setup:
+- Initialize a new React project using Vite for optimal performance: `npm create vite@latest weather-app --template react`.
+- Install necessary dependencies: Axios for API calls, and a suitable UI library like Material UI or Chakra UI for consistent styling and accessibility. `npm install axios @mui/material @emotion/react @emotion/styled` (example with Material UI).
+- Configure environment variables for API keys.
+
+## Component Structure and Logic:
+- **WeatherApp Component (Main Container):**
+    - Manage application state using `useState` for city, weather data, loading, and error states.
+    - Implement `fetchWeatherData` function:
+        - Use Axios to make API calls to OpenWeatherMap or another reliable weather API.
+        - Handle API key securely using environment variables (`VITE_WEATHER_API_KEY`).
+        - Implement robust error handling (e.g., display error messages for invalid city names or API failures).
+        - Display a loading indicator during API calls.
+    - Create `WeatherForm` and `WeatherDisplay` child components.
+- **WeatherForm Component (Input and Search):**
+    - Use Material UI's `TextField` and `Button` components for input and search.
+    - Implement controlled input using `useState`.
+    - Trigger `fetchWeatherData` in the parent component when the search button is clicked.
+- **WeatherDisplay Component (Weather Details):**
+    - Display weather information with clear, visually appealing UI components from Material UI (e.g., `Card`, `Typography`, `Grid`, `Icons`).
+    - Show:
+        - City name, current temperature (Celsius/Fahrenheit selectable), weather description, and weather icon.
+        - Detailed information like humidity, wind speed, pressure, and sunrise/sunset times.
+        - Implement conditional rendering to handle loading and error states.
+- **Visual Design and User Experience:**
+    - Use Material UI's theming capabilities to create a consistent and visually appealing design.
+    - Implement responsive design for different screen sizes.
+    - Use clear and concise language in the UI.
+    - Animate transitions for a smooth user experience.
+    - Display weather icons from a reliable icon library.
+- **Performance and Best Practices:**
+    - Use `useMemo` and `useCallback` to optimize rendering performance.
+    - Implement lazy loading for images and other assets.
+    - Ensure accessibility by using ARIA attributes and keyboard navigation.
+    - Implement data caching to reduce API calls.
+    - Consider using React Context or Redux for more complex state management if needed.
+    - Implement efficient error boundary.
+- **Vitals:**
+    - Measure and optimize Core Web Vitals (LCP, FID, CLS) using tools like Lighthouse or Chrome DevTools.
+    - Use Vite's production build optimizations for smaller bundle sizes.
+    - Implement code splitting to reduce initial load time.
+    - Optimize image sizes and formats for faster loading.
+    - Ensure smooth animations and transitions to prevent CLS issues.
+    - Use a Content Delivery Network (CDN) for static assets.
